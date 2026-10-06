@@ -1,0 +1,47 @@
+name: DevSecOps Secure CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  security_scans:
+    name: Run Security Audits
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Clonar el código del repositorio en la máquina virtual de GitHub
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Necesario para que TruffleHog revise el historial completo
+
+      # 2. Análisis del código fuente (SAST) con Semgrep
+      - name: SAST Scan (Semgrep)
+        run: |
+          pip install semgrep
+          semgrep scan --config=auto --error
+
+      # 3. Análisis de dependencias (SCA) con npm audit
+      # Como usas Node/Vite, esto buscará componentes vulnerables u obsoletos
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: SCA Dependency Scan (npm audit)
+        run: |
+          npm ci # Instalación limpia de dependencias
+          npm audit --audit-level=high # Falla el flujo si hay vulnerabilidades Altas/Críticas
+
+      # 4. Escaneo de Secretos Expuestos (Secret Scanning) con TruffleHog
+      - name: Secret Scanning (TruffleHog)
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+          extra_args: --only-verified # Evita falsos positivos comprobando si las keys son reales
