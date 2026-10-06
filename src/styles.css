@@ -10,6 +10,7 @@
   -moz-osx-font-smoothing: grayscale;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-size: 18px;
   --surface: #111824;
   --surface-raised: #151e2c;
   --line: #253247;
@@ -26,6 +27,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  font-size: 18px;
   background:
     radial-gradient(ellipse at 50% -24%, rgba(25, 104, 126, 0.19), transparent 52%),
     radial-gradient(rgba(139, 162, 187, 0.08) 0.7px, transparent 0.7px),
@@ -69,7 +71,7 @@ button {
   background: rgba(83, 224, 208, 0.09);
   color: var(--cyan);
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -85,7 +87,7 @@ button {
 
 .eyebrow {
   color: #a5b5ca;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 500;
 }
 
@@ -99,7 +101,36 @@ button {
   border-radius: 999px;
   background: rgba(83, 224, 208, 0.06);
   color: #8ccbc4;
-  font-size: 9px;
+  font-size: 14px;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  border: 1px solid rgba(83, 224, 208, 0.16);
+  border-radius: 999px;
+  background: rgba(83, 224, 208, 0.04);
+  margin-left: 12px;
+}
+
+.lang-option {
+  border: none;
+  background: transparent;
+  color: #9aa9bd;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.lang-option.active {
+  background: rgba(83, 224, 208, 0.12);
+  color: var(--cyan);
 }
 
 .status-dot,
@@ -114,7 +145,7 @@ button {
 .hero h1 {
   max-width: 680px;
   margin: 0;
-  font-size: clamp(38px, 7vw, 60px);
+  font-size: clamp(48px, 7.5vw, 72px);
   font-weight: 700;
   letter-spacing: -0.055em;
   line-height: 1.08;
@@ -128,7 +159,7 @@ button {
   max-width: 500px;
   margin: 17px 0 22px;
   color: #97a5ba;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.7;
 }
 
@@ -142,7 +173,7 @@ button {
   background: rgba(13, 19, 29, 0.8);
   color: #a5b4c7;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .terminal-prompt,
@@ -181,14 +212,14 @@ button {
   display: block;
   margin-bottom: 7px;
   color: #78879b;
-  font-size: 9px;
+  font-size: 14px;
   font-weight: 500;
 }
 
 .section-heading h2 {
   margin: 0;
   color: #edf2f8;
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 600;
   letter-spacing: -0.025em;
 }
@@ -196,7 +227,7 @@ button {
 .module-count {
   padding-bottom: 2px;
   color: #738198;
-  font-size: 9px;
+  font-size: 14px;
 }
 
 .tabs {
@@ -237,7 +268,7 @@ button {
   flex: 0 0 auto;
   place-items: center;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -296,7 +327,7 @@ button {
 .tab-label strong {
   overflow: hidden;
   color: #e1e8f1;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -305,19 +336,19 @@ button {
 .tab-label small {
   color: #8290a3;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 14px;
 }
 
 .tab-description {
   color: #9aa9bd;
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.45;
 }
 
 .tab-arrow {
   margin-left: auto;
   color: #64748a;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .tab-button.active .tab-arrow {
@@ -340,7 +371,7 @@ div[class*="bg-[#11111b]"] {
 div[class*="bg-[#11111b]"] > h3 {
   margin: 0 0 18px;
   color: #edf2f8;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.45;
@@ -361,7 +392,7 @@ div[class*="bg-[#11111b]"] button {
   border-radius: 6px;
   cursor: pointer;
   font-family: 'DM Sans', 'Segoe UI', sans-serif;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 600;
   transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
 }
@@ -398,7 +429,7 @@ div[class*="bg-[#11111b]"] form label {
   display: block;
   margin-bottom: 7px;
   color: #a9b5c6;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -417,7 +448,7 @@ div[class*="bg-[#11111b]"] input {
   background: #0c131d;
   color: #e1e8f1;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 18px;
 }
 
 div[class*="bg-[#11111b]"] input:focus {
@@ -453,9 +484,11 @@ div[class*="bg-[#11111b]"] > pre:not(:last-child) {
   background: rgba(83, 224, 162, 0.055);
   color: #bdc9d7;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.7;
+  white-space: pre-wrap;
   overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 div[class*="bg-[#11111b]"] > pre:last-child {
@@ -467,7 +500,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   background: #0a1018;
   color: #adbed0;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.8;
   tab-size: 2;
 }
@@ -489,7 +522,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   width: 42px;
   height: 42px;
   border-radius: 11px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .scenario-heading .section-kicker {
@@ -499,7 +532,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
 .scenario-heading h3 {
   margin: 0;
   color: #edf2f8;
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.025em;
 }
@@ -512,7 +545,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   background: rgba(255, 123, 123, 0.07);
   color: #f09999;
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.05em;
   white-space: nowrap;
 }
@@ -520,7 +553,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
 .scenario-description {
   margin: 15px 0 19px;
   color: #92a0b4;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -546,7 +579,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   background: transparent;
   color: #8795a8;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 600;
   transition: background 160ms ease, color 160ms ease;
 }
@@ -592,7 +625,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   display: block;
   margin-bottom: 7px;
   color: #a9b5c6;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -611,7 +644,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   background: #0c131d;
   color: #e1e8f1;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 18px;
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -636,7 +669,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   background: linear-gradient(135deg, #2db9ae, #25a99f);
   color: #071514;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 700;
   transition: filter 150ms ease, transform 150ms ease;
 }
@@ -660,9 +693,11 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   border-radius: 8px;
   color: #bdc9d7;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.7;
+  white-space: pre-wrap;
   overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .result-message.danger {
@@ -688,7 +723,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   background: #101722;
   color: #93a1b5;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 15px;
 }
 
 .code-lights {
@@ -710,7 +745,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
 .code-language {
   margin-left: auto;
   color: #69788e;
-  font-size: 8px;
+  font-size: 14px;
 }
 
 .code-block {
@@ -722,7 +757,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   background: #0a1018;
   color: #adbed0;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.8;
   tab-size: 2;
 }
@@ -734,7 +769,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   gap: 16px;
   padding: 19px 4px 0;
   color: #65748a;
-  font-size: 8px;
+  font-size: 14px;
 }
 
 .page-footer > span:first-child {
@@ -748,9 +783,82 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   height: 5px;
 }
 
+.details-panel {
+  margin-top: 18px;
+  border: 1px solid rgba(83, 224, 208, 0.2);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(17, 24, 36, 0.96), rgba(10, 16, 24, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.details-panel summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  color: #e5f1ff;
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 150ms ease;
+}
+
+.details-panel summary:hover {
+  background: rgba(83, 224, 208, 0.04);
+}
+
+.details-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.details-panel summary::before {
+  content: '▸';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  color: var(--cyan);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.details-panel[open] summary::before {
+  content: '▾';
+}
+
+.details-panel[open] summary {
+  border-bottom: 1px solid rgba(83, 224, 208, 0.14);
+  background: rgba(83, 224, 208, 0.04);
+}
+
+.details-content {
+  padding: 14px 16px 16px;
+  color: #a9b7ca;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.details-content p {
+  margin: 0 0 10px;
+}
+
+.details-content p:last-child {
+  margin-bottom: 0;
+}
+
+.details-content strong {
+  color: #dfeaf8;
+}
+
 @media (max-width: 600px) {
   .lab-shell {
-    width: min(100% - 28px, 520px);
+    width: min(100% - 18px, 520px);
     padding-top: 38px;
   }
 
@@ -764,17 +872,17 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   }
 
   .eyebrow {
-    font-size: 9px;
+    font-size: 13px;
   }
 
   .status-pill {
     gap: 5px;
     padding: 6px 7px;
-    font-size: 7px;
+    font-size: 11px;
   }
 
   .hero-copy {
-    font-size: 13px;
+    font-size: 17px;
   }
 
   .section-heading {
@@ -795,15 +903,15 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   .tab-icon {
     width: 29px;
     height: 29px;
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .tab-label strong {
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .tab-label small {
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .tab-arrow {
@@ -816,10 +924,12 @@ div[class*="bg-[#11111b]"] > pre:last-child {
 
   div[class*="bg-[#11111b]"] {
     padding: 17px 13px;
+    overflow-wrap: anywhere;
   }
 
   .scenario-card {
     padding: 17px 13px;
+    overflow-wrap: anywhere;
   }
 
   .scenario-heading {
@@ -832,25 +942,26 @@ div[class*="bg-[#11111b]"] > pre:last-child {
   }
 
   .scenario-heading h3 {
-    font-size: 14px;
+    font-size: 19px;
   }
 
   .risk-badge {
     padding: 5px 6px;
-    font-size: 7px;
+    font-size: 11px;
   }
 
   .page-footer {
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
-    font-size: 7px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 390px) {
   .tabs {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .tab-arrow {
@@ -874,7 +985,7 @@ div[class*="bg-[#11111b]"] > pre:last-child {
 
   div[class*="bg-[#11111b]"] > div:first-of-type button {
     padding: 8px 7px;
-    font-size: 9px;
+    font-size: 14px;
   }
 
   .input-row {
@@ -889,6 +1000,14 @@ div[class*="bg-[#11111b]"] > pre:last-child {
     max-width: 64px;
     white-space: normal;
     text-align: center;
+  }
+
+  .mode-switch {
+    width: 100%;
+  }
+
+  .mode-button {
+    justify-content: center;
   }
 }
 

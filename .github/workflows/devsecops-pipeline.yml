@@ -29,13 +29,16 @@ jobs:
       - name: Setup Node.js Environment
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: SCA Dependency Scan (npm audit)
         run: |
           npm ci # Instalación limpia de dependencias
           npm audit --audit-level=high # Falla el flujo si hay vulnerabilidades Altas/Críticas
+
+      - name: Production Build
+        run: npm run build
 
       # 4. Escaneo de Secretos Expuestos (Secret Scanning) con TruffleHog
       - name: Secret Scanning (TruffleHog)
