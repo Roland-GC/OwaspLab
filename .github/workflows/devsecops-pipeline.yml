@@ -14,7 +14,7 @@ jobs:
     steps:
       # 1. Clonar el código del repositorio en la máquina virtual de GitHub
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0 # Necesario para que TruffleHog revise el historial completo
 
@@ -27,7 +27,7 @@ jobs:
       # 3. Análisis de dependencias (SCA) con npm audit
       # Como usas Node/Vite, esto buscará componentes vulnerables u obsoletos
       - name: Setup Node.js Environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '22'
           cache: 'npm'
@@ -42,7 +42,7 @@ jobs:
 
       # 4. Escaneo de Secretos Expuestos (Secret Scanning) con TruffleHog
       - name: Secret Scanning (TruffleHog)
-        uses: trufflesecurity/trufflehog@main
+        uses: trufflesecurity/trufflehog@ddc015e5ed99942b2253d8ea16a0586a01ef2ab1
         with:
           path: ./
           base: ${{ github.event.repository.default_branch }}
